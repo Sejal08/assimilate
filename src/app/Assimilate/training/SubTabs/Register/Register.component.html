@@ -1,0 +1,179 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="otp">
+    <div class="container-form m-t-50">
+      <h3 style="text-align:center">Verification</h3>
+      <h6 class="m-t-20">Enter Mobile Number:</h6>
+      <ng-template matStepLabel>Verification</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number" [formControl]="mobNo" required>
+      </mat-form-field>
+      <div>
+        <button (click)="submit()" [disabled]="!mobNo.valid" mat-raised-button color="primary" matStepperNext>Submit</button>
+      </div>
+
+      <h6 [hidden]="hidden" class="m-t-20">Enter OTP:</h6>
+      <mat-form-field [hidden]="hidden">
+        <input matInput placeholder="Verification Code" [formControl]="otp" required>
+      </mat-form-field>
+      <div [hidden]="hidden">
+        <button [disabled]="!otp.valid" mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </div>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <div class="container-form m-t-50">
+        <ng-template matStepLabel>Basic Information</ng-template>
+        <h5>Basic Information</h5>
+        <mat-form-field>
+          <input matInput placeholder="Full Name" formControlName="fname" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="address" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Pin Code" formControlName="pin" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="District" formControlName="district" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="User Name" formControlName="uname" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="pass" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Confirm Password" formControlName="cpass" required>
+        </mat-form-field>
+
+        <div>
+          <button style="margin-right:20px;" mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" [disabled]="!secondFormGroup.valid" matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <div class="container-form m-t-50">
+        <ng-template matStepLabel>Training Details</ng-template>
+
+        <h5>Training Details</h5>
+        <mat-form-field>
+          <mat-select placeholder="Select Training" formControlName="trainingC" required>
+            <mat-option *ngFor="let training of Training" [value]="training">
+              {{training.name}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="trainingC.hasError('required')">Please choose Training</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field>
+          <mat-select placeholder="Select Duration" formControlName="durationC" required>
+            <mat-option *ngFor="let duration of Duration" [value]="duration">
+              {{duration.time}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="durationC.hasError('required')">Please choose Duration</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field>
+          <mat-select placeholder="Select Location" formControlName="locationC" required>
+            <mat-option *ngFor="let location of Location" [value]="location">
+              {{location.name}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="locationC.hasError('required')">Please choose Location</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field>
+          <input matInput placeholder="Enter Name of Reference Person " formControlName="ref" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Reference Person's User ID" formControlName="refId" required>
+        </mat-form-field><br>
+        <div>
+          <button style="margin-right:20px;" mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" [disabled]="!thirdFormGroup.valid" matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fourthFormGroup">
+    <form [formGroup]="fourthFormGroup">
+      <div class="container-form m-t-50">
+        <ng-template matStepLabel>Payment Mode</ng-template>
+
+        <h5>Payment Details</h5>
+        <mat-form-field>
+          <mat-select placeholder="Payment Mode" formControlName="paymentC" required>
+            <mat-option *ngFor="let payment of Payment" [value]="payment">
+              {{payment.mode}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="trainingC.hasError('required')">Please choose Training</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field>
+          <mat-select placeholder="Select Location" formControlName="plocationC" required>
+            <mat-option *ngFor="let location of PLocation" [value]="location">
+              {{location.name}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="trainingC.hasError('required')">Please choose Training</mat-error> -->
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Fees On Basis Training Location" formControlName="fees" required>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Registration Fees Amount" formControlName="regFee" required>
+        </mat-form-field><br>
+        <div>
+          <button style="margin-right:20px;" mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" [disabled]="!fourthFormGroup.valid" matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+
+    <p style="color:brown">If Payement Mode is Online then user can pay by using payment gateway. If Payment Mode is Cash
+      then user will be approved by Admin</p>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Get Mobile App</ng-template>
+    <div class="container-form m-t-50">
+      <h5>Get Mobile App</h5>
+
+      <p>Link for Mobile App</p>
+      <label style="color:blue"><u> https://www.assimilatetechnologies.com/applink</u></label>
+      <div>
+        <button style="margin-right:20px;" mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </div> 
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Acknowledgment</ng-template>
+    <div class="container-form m-t-50">
+      <h5>Acknowledgement</h5>
+
+      <p>Thank you for showing interest in Assimilate Technology Hands on Training Program</p>
+      <p>Please Login to get access all services from us.</p>
+      <p>Link for Mobile App</p>
+      <label style="color:blue"><u> https://www.assimilatetechnologies.com/applink</u></label>
+      <div>
+        <button style="margin-right:20px;" mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary">Ready to Login</button>
+      </div>
+    </div>
+
+  </mat-step>
+</mat-horizontal-stepper>

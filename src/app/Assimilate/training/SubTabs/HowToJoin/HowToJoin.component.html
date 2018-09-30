@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 m-t-20">
+        <h6>How To Join</h6>
+        <div class="index" *ngFor="let item of contents">
+          <a>{{item.index}}</a>
+        </div>
+        
+        <hr>
+        <h6 class="m-t-20">Click To Join</h6>
+      </div>
+  
+      <div class="col-sm-9 ">
+        <div class="m-t-20 data">
+          <h6>Content management systems (CMS) [Training Title]</h6>
+          <div *ngFor="let item of contents">
+          <p>{{item.content}}</p>
+          </div>
+          <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+        </div>
+      </div>
+    </div>
+  </div>

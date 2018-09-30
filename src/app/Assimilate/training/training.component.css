@@ -1,0 +1,36 @@
+.intro {
+   width: 100%;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+    
+.intro_image{
+    margin: 5% 2% 5% 2%;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    right: 0;
+    top: 13px; 
+}
+
+.intro_content{
+    margin-top: 5%;
+}
+
+.intro_title {
+    font-size: 40px;
+    font-weight: 400;
+    color: #2d2c2c;
+    text-transform: uppercase;
+}
+    
+.intro_text {
+    font-weight: 500;
+    color: #929191;
+    margin-top: 10px;
+}
+    
+.intro_button {
+    margin-top: 57px;
+    z-index: 1;
+}

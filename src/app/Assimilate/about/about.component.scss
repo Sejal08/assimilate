@@ -1,0 +1,96 @@
+.title{
+    border-bottom: 5px solid rgb(255, 196, 0);
+    font-size: 20px;
+    font-weight: 500;
+    width: 20%;
+}    
+
+.exp_title{
+    border-bottom: 5px solid rgb(255, 196, 0);
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;
+}
+
+.abt_img{
+    padding: 10%;
+    width: 100%;
+    height: auto;
+}
+
+.training_img{
+    padding: 5%;
+    width: 90%;
+    height: auto;
+}
+
+.companies_img{
+    padding: 5%;
+    width: 90%;
+    height: auto;
+}
+
+.candidate_img{
+    padding: 10%;
+    width: 100%;
+    height: 250px;
+}
+
+.client_txt{
+    padding: 5%;
+    width: 100%;
+    height: auto;
+}
+
+.client_title{
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.placement_img{
+    padding: 5%;
+    width: 90%;
+    height: auto;
+}
+
+.vl{
+    border-left: 5px solid rgb(223, 27, 27);
+    padding-right: 10px;
+}
+
+.enq_details{
+    display: flex;
+    padding-top: 10px
+  }
+
+.call{
+    border-left: 5px solid rgb(255, 196, 0);
+}
+
+.call:hover{
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.button{
+    background: rgb(230, 78, 78);
+    color: white;
+    margin-top: 2%;
+    margin-right: 2%;
+    width: 20%; 
+}  
+
+.button:hover{
+    background: rgb(223, 27, 27);
+    color: white;
+}
+
+.slick-prev {
+    left: 3% !important;
+    z-index: 1;
+  }
+
+.slick-next {
+    right: 3% !important;
+    z-index: 1;
+  }

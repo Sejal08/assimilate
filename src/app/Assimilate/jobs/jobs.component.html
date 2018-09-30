@@ -1,0 +1,87 @@
+<div class="container-fluid body">
+    <div class="row p-b-30">
+        <div class="col-md-3">
+          <div class="title">Get Trainings Details</div>
+        </div>
+        <mat-tab-group class="col-md-9">
+                <mat-tab label="DOT NET"> Content 1 </mat-tab>
+                <mat-tab label="PHP"> Content 2 </mat-tab>
+                <mat-tab label="ANGULAR"> Content 3 </mat-tab>
+                <mat-tab label="JAVA"> Content 4 </mat-tab>
+                <mat-tab label="ANDROID"> Content 5 </mat-tab>
+                <mat-tab label="IONIC"> Content 6 </mat-tab>   
+        </mat-tab-group>      
+      </div>
+    
+  
+  
+    <div class="select_trng row">
+        <div class="col-md-5" style="font-size: 20px">Search Jobs Related To</div>
+        <select class="form-control col-md-7" required>
+            <option *ngFor="let course of training" value= {{course.name}}>{{course.name}}</option>
+        </select>  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4">
+        <div class="nav_content">Get New Job Updates</div>
+          <div class="m-t-30">
+            <h6>Mobile Number*: </h6>
+              <input class="form-control col-sm-8">
+              <button type="submit" class="btn button">Get Updates</button>
+          </div>
+      </div>
+      <div class="col-md-8">
+        <div class="nav_content">DOT NET Programmer</div>
+        <div class="m-t-20" *ngFor="let info of jobsdesp">
+            <div class="material_title">{{info.job_title}}</div>
+            <p>{{info.desp}}</p>
+            <p>Job Type: {{info.job_type}}</p>
+            <p>Salary: {{info.salary}}</p>
+            <p>Experience: {{info.exp}}</p>
+            <p>Location:{{info.location}}</p>
+              <div style=" padding-bottom: 10%;">
+                <button type="button" data-toggle="modal" data-target="#myModal" class="btn button1">Apply Now</button>
+                <button type="submit" class="btn button1">Share</button>
+              </div>   
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+
+  <div class="container">
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal_title">Apply Now</div>
+            <hr>
+            <div class="modal-body">
+              <div class="row m-b-20">
+                <h6 class="col-sm-3">Name*: </h6>
+                <input class="form-control col-sm-8">
+              </div>
+              <div class="row m-b-20">
+                <h6 class="col-sm-3">Contact*: </h6>
+                <input class="form-control col-sm-8">
+              </div>
+              <div class="row m-b-20">
+                <h6 class="col-sm-3">Upload Pdf: </h6>
+                <input class="col-sm-8" type="file" (change)="selectFile($event)">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn button1" [disabled]="!selectedFiles">Upload</button>
+              <button type="button" class="btn button1" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+  

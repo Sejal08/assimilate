@@ -1,0 +1,157 @@
+<div class="container-fluid p-b-15">
+    <div class="row" *ngFor="let info of about">
+        <div class="col-md-7">
+            <div class="title">About</div>    
+            <div class="p-t-10 p-l-10">
+                    {{info.description}}
+            </div>
+        </div>
+        <div class="col-md-5">
+            <img class="abt_img" src="{{info.img}}" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-b-30" style="background-color: red">
+    <div class="title">Trainings Available on</div>
+        <div>
+            <ngx-slick responsive="breakpoints" class="carousel" #slickModal="slick-modal" [config]="slideConfig1">
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                    <img class="training_img" src="{{ slide.img }}" alt="" width="100%">
+                </div>
+            </ngx-slick>
+        </div>
+</div>    
+
+<div class="container-fluid p-b-30">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="title">Make Enquiry</div>
+                <form [formGroup]="enquiryDetail">
+                    <div class="container detail">
+                      <div class="enq_details row justify-content-md-center">
+                        <h6 class="col-sm-2">Name*: </h6>
+                        <input class="form-control col-sm-8" formControlName="name">
+                      </div>
+                      <div class="enq_details row justify-content-md-center">
+                        <h6 class="col-sm-2">Contact*: </h6>
+                        <input class="form-control col-sm-8" formControlName="contact">
+                      </div>
+                      <div class="enq_details row justify-content-md-center">
+                        <h6 class="col-sm-2">Email*: </h6>
+                        <input class="form-control col-sm-8" formControlName="email">
+                      </div>
+                      <div class="enq_details row justify-content-md-center">
+                        <h6 class="col-sm-2">Enquiry for*: </h6>
+                        <input class="form-control col-sm-8" formControlName="enqfor" placeholder="Select Technology for Training">
+                      </div>
+                      <div class="enq_details row justify-content-md-center">
+                        <h6 class="col-sm-2">Request Call: </h6>
+                            <div class="col-sm-8">
+                                <label class="m-r-50 call" (click)="makecall()">YES</label>
+                                <label class="m-r-50 call" (click)="nocall()">NO</label>
+                            </div>    
+                      </div>
+                      <div class="enq_details row justify-content-md-center">
+                            <h6 class="col-sm-2">Message: </h6>
+                            <textarea class="form-control col-sm-8" formControlName="msg"></textarea>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn button">Send</button>
+                        <button type="button" class="btn button">Cancel</button>
+                      </div>
+                    </div>
+                </form>   
+        </div>
+
+        <div class="vl"></div>
+
+        <div class="col-md-5" *ngFor="let info of whyus">
+            <div class="title">Why Us?</div>
+                <div class="p-t-10 p-l-10">
+                    {{info.description}}
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-b-30">
+    <div class="title">Companies</div>
+        <div>
+            <ngx-slick responsive="breakpoints" class="carousel" #slickModal="slick-modal" [config]="slideConfig1">
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                    <img class="companies_img" src="{{ slide.img }}" alt="" width="100%">
+                </div>
+            </ngx-slick>
+        </div>
+</div>    
+
+<div class="container-fluid p-b-30">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="exp_title">What our candidate says</div>
+                <div class="container">
+                    <ngx-slick responsive="breakpoints" class="carousel" #slickModal="slick-modal" [config]="slideConfig2">
+                        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                            <div class="row">
+                                <div class="col-md-6">                          
+                                    <img class="candidate_img" src="{{ slide.img }}" alt="" width="100%">
+                                    <div style="text-align: center">{{slide.name}}</div>
+                                    <div style="text-align: center">{{slide.cname}}</div>
+                                </div>
+                                <div class="m-t-20 col-md-6">
+                                    {{slide.text}}       
+                                </div>
+                            </div>
+                        </div>
+                    </ngx-slick>
+                </div>
+        </div>            
+
+    <div class="vl"></div>
+
+        <div class="col-md-5">
+            <div class="exp_title">What our client says</div>
+                <div class="container ">
+                    <ngx-slick responsive="breakpoints" class="carousel" #slickModal="slick-modal" [config]="slideConfig2">
+                        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+                            <div class="client_txt">
+                                {{slide.text}}
+                            </div>
+                            <div class="client_title p-t-10">
+                                <div>{{slide.title}}</div>
+                                <div>{{slide.designation}}</div>
+                            </div>
+                        </div>
+                    </ngx-slick>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-b-30">
+    <div class="title">Placements by us</div>
+        <div>
+            <ngx-slick responsive="breakpoints" class="carousel" #slickModal="slick-modal" [config]="slideConfig1">
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                    <img class="placement_img" src="{{ slide.img }}" alt="" width="100%">
+                        <div class="client_title">
+                            <div>{{slide.name}}</div>
+                            <div>{{slide.cname}}</div>
+                        </div>    
+                </div>
+            </ngx-slick>
+        </div>
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+

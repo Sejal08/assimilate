@@ -1,0 +1,28 @@
+<div class="container d-flex m-t-50">
+  <div class="justify-content-center">
+    <h5 style="text-align: center" class="intro_title m-b-20">Make Enquiry</h5>
+    <form class="contact_form" [formGroup]="fGroup" (ngSubmit)="onSubmit(f.value)" validate>
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="name" id="name" name="name" required="required" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <input type="email" class="form-control" formControlName="email" id="email" name="email" placeholder="Enter email address"
+          required="required">
+      </div>
+      <span *ngIf="fGroup.hasError('email', 'email')" style="color:red;">
+        Please enter the correct email or valid email.
+      </span>
+      <div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" id="message" formControlName="message" rows="1" placeholder="Enter Message"></textarea>
+        </div>
+      </div>
+      <div class="col-md-12 text-right">
+        <button type="submit" class="btn btn1 btn-grad" (click)="add(fGroup.value)" style="width: 100%;">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

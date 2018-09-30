@@ -1,0 +1,28 @@
+<mat-tab-group mat-stretch-tabs [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab.label">
+    <div class="intro">
+      <div class="container-fluid">
+        <div class="row justify-content-around">
+          <div class="col-sm-3 d-flex justify-content-center">
+            <img class="intro_image" src="../../../assets/images/images (1).jpg" alt="">
+          </div>
+          <div class="col-sm-7">
+            <div class="intro_content">
+              <div class="intro_title">{{tab.content}}</div>
+              <p class="intro_text">Short description about technology will be here in one paragraph. If Paragraph size is
+                more than the size of block then it will shows View More link and when visitor click on model will display
+                at center of screen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav mat-tab-nav-bar mat-stretch-tabs>
+      <div mat-tab-link *ngFor="let link of navLinks1" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+        {{link.label}}
+      </div>
+    </nav>
+  </mat-tab>
+</mat-tab-group>
+
+<router-outlet></router-outlet>
